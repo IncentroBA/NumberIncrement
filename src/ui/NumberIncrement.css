@@ -1,0 +1,66 @@
+.number-widget {
+    display: grid;
+    flex: 1;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr auto auto;
+    position: relative;
+}
+
+.number-widget .form-control {
+    grid-area: 1 / 1 / 1 / 3;
+    padding-right: 55px;
+}
+
+.number-widget .form-control.has-type {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.number-widget input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.number-widget input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.number-widget input {
+    -moz-appearance: textfield;
+}
+
+.number-widget-buttons {
+    grid-area: 1 / -1 / 1 / 3;
+    margin: 6px;
+    place-self: end;
+}
+
+.number-widget .increment {
+    margin-right: 4px;
+}
+
+.number-widget .increment,
+.number-widget .decrement {
+    border: solid 1px var(--input-border, #cdcdcd);
+    border-radius: 4px;
+    background-color: white;
+    padding: 2px 8px;
+}
+
+.number-widget .increment:hover,
+.number-widget .decrement:hover {
+    border-color: var(--brand-primary, #ffa500);
+}
+
+.number-widget .number-widget-type {
+    background-color: white;
+    border: solid 1px var(--input-border, #cdcdcd);
+    border-left: 0;
+    border-radius: 0 4px 4px 0;
+    padding: 8px;
+}
+
+.number-widget .form-control-static {
+    border: solid 1px transparent;
+}

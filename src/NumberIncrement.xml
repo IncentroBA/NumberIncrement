@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="incentro.numberincrement.NumberIncrement" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Number Increment</name>
+    <description>Increment / decrement a number input with buttons on the side. Adjustable how much is added/removed at a time.</description>
+    <icon>iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAAEEfUpiAAAACXBIWXMAAAsSAAALEgHS3X78AAAB50lEQVRYhb1Wy63CMBC087hxeQ0gBe6IRowEFQEX2uEABdADBZBO/DTGm7d2/EsMjLQiJpmd3fX6I8UL2v6KBoPj8WgGSinzRz8gaKWUJkjOJx+C0wY+Ghpcr9d/p1Za0zMZxGYiAB6SEwV/QZjFXnA8fW1mu15Cay2klA7TyTMWaPADHtPgAz/gbJomPn+KCPhP2peT65A0KCCJlntDP6FmKSAiisopdAw0AaFU+jLiI9jpdHLGMK7oY9DTqTkJIdmv6/U6Snw8Hm4NShVDKeyUUpfRTIbdxD54DlIYg8ViITabTfeD3uE8Wnj3+z3qzpLx+BtdkAVkg1EOfLKgGpS0cYjcR8DbFkA783GMXJRCipx1kCOLVB+UkKMRlJJFaDUSeT6fi9VqFSXSanQccGWQz+dz1MF2uzW/fQ3GhM3R1JCBpoYshNhLux9UbShTYAPfNzlxOmdgdIepFcbWa6t2CW7qn0Bsqj4eQK5HnKWcO9KjTryrU4kwwalA6Bho29YY0HWdsRTGrorsoYbGOxwO5hn7dKwRpy7H6h6o3AfyAaDkNDW8/LXChNH3incJE4qn4N3CxQGEhHHrTB1VKdAxlg3gUxn7GPTAt4QJqABau/22sEWH03CplNrjpvxNYdwFbrfb8g8X6+gYUDR3+gAAAABJRU5ErkJggg==</icon>
+    <properties>
+        <propertyGroup caption="General">
+            <property key="interval" type="integer" defaultValue="1">
+                <caption>Button interval</caption>
+                <description>Increment/decrement buttons update value by this amount</description>
+            </property>
+            <property key="inputType" type="string" required="false" defaultValue="%">
+                <caption>Type</caption>
+                <description>Indicator to display type. example: EUR, %, $, ...</description>
+            </property>
+            <property key="minNumber" type="integer" defaultValue="0">
+                <caption>Min number</caption>
+                <description>The smallest value possible</description>
+            </property>
+            <property key="maxNumber" type="integer" defaultValue="100">
+                <caption>Max number</caption>
+                <description>The biggest value possible</description>
+            </property>
+            <property key="inputAttr" type="attribute">
+                <caption>Attribute</caption>
+                <description>Data source</description>
+                <attributeTypes>
+                    <attributeType name="Integer"/>
+                </attributeTypes>
+            </property>
+            <property key="readOnlyStyle" type="enumeration" defaultValue="control">
+                <caption>Read-only style</caption>
+                <description></description>
+                <enumerationValues>
+                    <enumerationValue key="control">control</enumerationValue>
+                    <enumerationValue key="text">text</enumerationValue>
+                </enumerationValues>
+            </property>
+            <systemProperty key="Label"/>
+            <systemProperty key="Editability"/>
+            <systemProperty key="TabIndex"/>
+        </propertyGroup>
+    </properties>
+</widget>
