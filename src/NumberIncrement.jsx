@@ -8,6 +8,7 @@ export default function NumberIncrement({
     inputType,
     maxNumber,
     minNumber,
+    onChange,
     readOnlyStyle,
     ...rest
 }) {
@@ -30,6 +31,12 @@ export default function NumberIncrement({
         }
     }, [currentValue, inputAttr]);
 
+    function handleOnChange() {
+        if (onChange && onChange.canExecute) {
+            onChange.execute();
+        }
+    }
+
     function onChangeInput(event) {
         if (event.target.value >= maxNumber) {
             setCurrentValue(maxNumber);
@@ -40,6 +47,7 @@ export default function NumberIncrement({
         } else {
             setCurrentValue(Number(event.target.value));
         }
+        handleOnChange();
     }
 
     function onIncrement() {
@@ -48,6 +56,7 @@ export default function NumberIncrement({
         } else {
             setCurrentValue(currentValue + stepInterval);
         }
+        handleOnChange();
     }
 
     function onDecrement() {
@@ -58,6 +67,7 @@ export default function NumberIncrement({
             setCurrentValue(currentValue - stepInterval);
             inputAttr.setValue(Big(currentValue - stepInterval));
         }
+        handleOnChange();
     }
 
     if (disabledValue && disabledValue === true && readOnlyStyle === "text") {

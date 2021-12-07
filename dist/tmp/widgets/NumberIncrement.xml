@@ -39,6 +39,10 @@
                     <enumerationValue key="text">text</enumerationValue>
                 </enumerationValues>
             </property>
+            <property key="onChange" type="action">
+                <caption>On Change</caption>
+                <description>Action to be performed when the input value is changed</description>
+            </property>
             <systemProperty key="Label"/>
             <systemProperty key="Editability"/>
             <systemProperty key="TabIndex"/>

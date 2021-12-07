@@ -10,6 +10,7 @@ Increment / decrement a number input with buttons on the side. Adjustable how mu
 -   Set a maximum Number. The widget doesn't allow increasing the values above this number.
 -   Set the attribute that is being influenced through this widget.
 -   read-only style (`control`, `text`).
+-   Define OnChange action.
 
 ## Usage
 
