@@ -3,9 +3,9 @@ import { createElement, useEffect, useState } from "react";
 import Big from "big.js";
 
 export default function NumberIncrement({
-    interval,
     inputAttr,
     inputType,
+    interval,
     maxNumber,
     minNumber,
     onChange,

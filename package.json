@@ -1,33 +1,48 @@
 {
   "name": "numberincrement",
   "widgetName": "NumberIncrement",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Increment / decrement a number input with buttons on the side. Adjustable how much is added/removed at a time.",
-  "copyright": "2021 Incentro International B.V.",
+  "copyright": "2024 Incentro International B.V.",
   "author": "Rob Duits",
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
+  "license": "MIT",
   "config": {
-    "projectPath": "../..//",
+    "projectPath": "../../",
     "mendixHost": "http://localhost:8080",
-    "developmentPort": "3000"
+    "developmentPort": 3000
   },
   "packagePath": "incentro",
   "scripts": {
-    "start": "pluggable-widgets-tools start:web",
+    "start": "pluggable-widgets-tools start:server",
+    "dev": "pluggable-widgets-tools start:web",
     "build": "pluggable-widgets-tools build:web",
     "lint": "pluggable-widgets-tools lint",
     "lint:fix": "pluggable-widgets-tools lint:fix",
     "prerelease": "npm run lint",
     "release": "pluggable-widgets-tools release:web"
   },
-  "license": "MIT",
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^9.0.0"
+    "@mendix/pluggable-widgets-tools": "^10.5.0"
   },
   "dependencies": {
-    "big.js": "^6.1.1",
-    "classnames": "^2.2.6"
+    "big.js": "^6.2.1",
+    "classnames": "^2.5.1"
+  },
+  "resolutions": {
+    "react": "18.2.0",
+    "react-native": "0.72.7",
+    "react-dom": "18.2.0",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0"
+  },
+  "overrides": {
+    "react": "18.2.0",
+    "react-native": "0.72.7",
+    "react-dom": "18.2.0",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0"
   }
 }
