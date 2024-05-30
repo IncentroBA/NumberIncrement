@@ -18,16 +18,18 @@
 
 .number-widget input::-webkit-outer-spin-button {
     -webkit-appearance: none;
+    appearance: none;
     margin: 0;
 }
 
 .number-widget input::-webkit-inner-spin-button {
     -webkit-appearance: none;
+    appearance: none;
     margin: 0;
 }
 
 .number-widget input {
-    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 .number-widget-buttons {
@@ -63,4 +65,10 @@
 
 .number-widget .form-control-static {
     border: solid 1px transparent;
+}
+
+.number-increment-preview {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
