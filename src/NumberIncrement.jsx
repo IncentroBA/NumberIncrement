@@ -16,13 +16,13 @@ export default function NumberIncrement({
     const style = rest.class || "";
     const widgetName = rest.name || "";
     const stepInterval = Number(interval);
-    const [currentValue, setCurrentValue] = useState(null);
+    const [currentValue, setCurrentValue] = useState("");
     const [disabledValue, setDisabledValue] = useState(false);
 
     useEffect(() => {
-        if (inputAttr.status === "available" && currentValue === null) {
-            setCurrentValue(Number(inputAttr.displayValue));
-        } else if (currentValue) {
+        if (inputAttr.status === "available" && currentValue === "") {
+            setCurrentValue(String(inputAttr.displayValue));
+        } else if (currentValue !== "") {
             inputAttr.setValue(Big(currentValue));
         }
 
@@ -42,15 +42,18 @@ export default function NumberIncrement({
 
         // Remove leading zeros (but keep "0" if that's the only digit)
         value = value.replace(/^0+(?=\d)/, "");
+        setCurrentValue(value);
 
-        if (value >= maxNumber) {
-            setCurrentValue(maxNumber);
+        const numValue = Number(value);
+
+        if (numValue >= maxNumber) {
+            setCurrentValue(String(maxNumber));
             inputAttr.setValue(Big(maxNumber));
-        } else if (value <= minNumber) {
-            setCurrentValue(minNumber);
+        } else if (numValue <= minNumber) {
+            setCurrentValue(String(minNumber));
             inputAttr.setValue(Big(minNumber));
         } else {
-            setCurrentValue(Number(value));
+            inputAttr.setValue(Big(value));
         }
         handleOnChange();
     }
