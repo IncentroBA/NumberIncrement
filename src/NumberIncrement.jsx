@@ -38,14 +38,19 @@ export default function NumberIncrement({
     }
 
     function onChangeInput(event) {
-        if (event.target.value >= maxNumber) {
+        let value = event.target.value;
+
+        // Remove leading zeros (but keep "0" if that's the only digit)
+        value = value.replace(/^0+(?=\d)/, "");
+
+        if (value >= maxNumber) {
             setCurrentValue(maxNumber);
             inputAttr.setValue(Big(maxNumber));
-        } else if (event.target.value <= minNumber) {
+        } else if (value <= minNumber) {
             setCurrentValue(minNumber);
             inputAttr.setValue(Big(minNumber));
         } else {
-            setCurrentValue(Number(event.target.value));
+            setCurrentValue(Number(value));
         }
         handleOnChange();
     }

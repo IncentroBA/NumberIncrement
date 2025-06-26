@@ -1,7 +1,7 @@
 {
     "name": "numberincrement",
     "widgetName": "NumberIncrement",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Increment / decrement a number input with buttons on the side. Adjustable how much is added/removed at a time.",
     "copyright": "2024 Incentro International B.V.",
     "author": "Rob Duits",
