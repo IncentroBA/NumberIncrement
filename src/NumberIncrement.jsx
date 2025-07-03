@@ -59,22 +59,18 @@ export default function NumberIncrement({
     }
 
     function onIncrement() {
-        if (currentValue + stepInterval >= maxNumber) {
-            setCurrentValue(maxNumber);
-        } else {
-            setCurrentValue(currentValue + stepInterval);
-        }
+        const numValue = Number(currentValue) || 0;
+        const newValue = Math.min(numValue + stepInterval, maxNumber);
+        setCurrentValue(String(newValue));
+        inputAttr.setValue(Big(newValue));
         handleOnChange();
     }
 
     function onDecrement() {
-        if (currentValue - stepInterval <= minNumber) {
-            setCurrentValue(minNumber);
-            inputAttr.setValue(Big(minNumber));
-        } else {
-            setCurrentValue(currentValue - stepInterval);
-            inputAttr.setValue(Big(currentValue - stepInterval));
-        }
+        const numValue = Number(currentValue) || 0;
+        const newValue = Math.max(numValue - stepInterval, minNumber);
+        setCurrentValue(String(newValue));
+        inputAttr.setValue(Big(newValue));
         handleOnChange();
     }
 
